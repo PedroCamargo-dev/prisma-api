@@ -9,12 +9,12 @@ describe('UsersController', () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [UsersController],
       providers: [UsersService],
-    }).compile();
+    }).compile()
 
-    controller = module.get<UsersController>(UsersController);
-  });
+    controller = module.get<UsersController>(UsersController)
+  })
 
   it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
-});
+    expect(controller).toBeDefined()
+  })
+})
