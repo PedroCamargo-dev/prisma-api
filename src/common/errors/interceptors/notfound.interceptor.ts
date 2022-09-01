@@ -14,11 +14,11 @@ export class NotFoundInterceptor implements NestInterceptor {
     return next.handle().pipe(
       catchError(error => {
         if (error instanceof NotFoundError) {
-          throw new NotFoundException(error.message)
+          throw new NotFoundException(error.message);
         } else {
           throw error;
         }
       }),
-    )
+    );
   }
 }

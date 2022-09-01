@@ -1,18 +1,17 @@
-import { retry } from "rxjs";
-import { DatabaseError } from "../types/DatabaseError";
-import { PrismaClientError } from "../types/PrismaClientError";
-import { UniqueConstraintError } from "../types/UniqueConstraintError";
+import { DatabaseError } from '../types/DatabaseError';
+import { PrismaClientError } from '../types/PrismaClientError';
+import { UniqueConstraintError } from '../types/UniqueConstraintError';
 
 enum PrismaErrors {
-  UniqueConstraintFail = 'P2002'
+  UniqueConstraintFail = 'P2002',
 }
 
 export const handleDatabaseErrors = (e: PrismaClientError): Error => {
   switch (e.code) {
     case PrismaErrors.UniqueConstraintFail:
-      return new UniqueConstraintError(e)
+      return new UniqueConstraintError(e);
 
     default:
-      return new DatabaseError(e.message)
+      return new DatabaseError(e.message);
   }
-}
+};

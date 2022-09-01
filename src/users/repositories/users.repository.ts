@@ -15,11 +15,11 @@ export class UsersRepository {
         posts: {
           select: {
             title: true,
-            createdAt: true
-          }
-        }
-      }
-    })
+            createdAt: true,
+          },
+        },
+      },
+    });
   }
 
   async findAll(): Promise<UserEntity[]> {
@@ -28,11 +28,11 @@ export class UsersRepository {
         posts: {
           select: {
             title: true,
-            createdAt: true
-          }
-        }
-      }
-    })
+            createdAt: true,
+          },
+        },
+      },
+    });
   }
 
   async findOne(id: number): Promise<UserEntity> {
@@ -44,11 +44,11 @@ export class UsersRepository {
         posts: {
           select: {
             title: true,
-            createdAt: true
-          }
-        }
-      }
-    })
+            createdAt: true,
+          },
+        },
+      },
+    });
   }
 
   async update(id: number, updateUserDto: UpdateUserDto): Promise<UserEntity> {
@@ -61,11 +61,11 @@ export class UsersRepository {
         posts: {
           select: {
             title: true,
-            createdAt: true
-          }
-        }
-      }
-    })
+            createdAt: true,
+          },
+        },
+      },
+    });
   }
 
   async remove(id: number): Promise<UserEntity> {
@@ -73,6 +73,6 @@ export class UsersRepository {
       where: {
         id,
       },
-    })
+    });
   }
 }

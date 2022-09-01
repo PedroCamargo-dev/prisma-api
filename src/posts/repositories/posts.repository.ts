@@ -46,7 +46,6 @@ export class PostsRepository {
         author: {
           select: {
             name: true,
-            email: true
           },
         },
       },
